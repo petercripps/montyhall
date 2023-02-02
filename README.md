@@ -27,9 +27,14 @@ at a Python prompt.
 
 Here are some typical results running this program one million times for each of the ALWAYSCHOOSE options 'y', 'n' and 'r'.
 
-ALWAYSCHOOSE = 'y'            
+ALWAYSCHOOSE = 'y'
+
 _You guessed correctly 666829 out of 1000000 times._
+
 ALWAYSCHOOSE = 'n'
+
 _You guessed correctly 332883 out of 1000000 times._
+
 ALWAYSCHOOSE = 'r'
+
 _You guessed correctly 499910 out of 1000000 times._
