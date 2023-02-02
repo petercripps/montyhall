@@ -16,7 +16,7 @@ def run_mh_simulator():
     while (playing):
         # randomly set the car door number (1 - 3)
         car_door = random.randint(1,3)
-        # set goat door numbers i.e. to numers which are not the car door number
+        # set goat door numbers i.e. numbers which are not the car door number
         goat_doors = [0,0]
         door = 1
         i = 0
@@ -87,8 +87,8 @@ def run_mh_simulator():
                         print("Bad luck, you got a goat.")
                     results[1] = results[1] + 1
             else:
-                print("Invalid choice: {choice}.")
-    print(f"You guessed correctly {results[0]} out of {results[0]+results[1]} times.")
+                print(f"Invalid choice: {choice}.")
+    print(f"You guessed correctly {results[0]:,d} out of {results[0]+results[1]:,d} times.")
 
 ############################
 # Main program starts here #
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     # Set some variables.
     VERBOSE = False
     AUTO = True
-    AUTOLIMIT = 1000000
+    AUTOLIMIT = 100000
     ALWAYSCHOOSE = 'n'
     MONTY = True
     if VERBOSE:

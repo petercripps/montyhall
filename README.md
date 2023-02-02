@@ -29,12 +29,14 @@ Here are some typical results running this program one million times for each of
 
 ALWAYSCHOOSE = 'y'
 
-`You guessed correctly 666829 out of 1000000 times.`
+`You guessed correctly 666,829 out of 1,000,000 times.`
 
 ALWAYSCHOOSE = 'n'
 
-`You guessed correctly 332883 out of 1000000 times.`
+`You guessed correctly 332,883 out of 1,000,000 times.`
 
 ALWAYSCHOOSE = 'r'
 
-`You guessed correctly 499910 out of 1000000 times.`
+`You guessed correctly 499,910 out of 1,000,000 times.`
+
+So it would appear the strategy to win the car is always to change your guess when asked to do so. If you do the chance of winning is 2/3 as opposed to 1/3 if you don't. If you randomly change sometimes and not others odds are 1/2.
