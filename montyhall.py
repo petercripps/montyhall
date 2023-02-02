@@ -1,7 +1,7 @@
-# Python program for investigating the Monty Hall Problem, see description here https://en.wikipedia.org/wiki/Monty_Hall_problem
+# Python program for investigating the Monty Hall problem, see description here https://en.wikipedia.org/wiki/Monty_Hall_problem
 import random
 
-# Some control variables
+# Control variables
 MONTY = False # set to True for Monty to tell you one of the False options and give you option to change
 ALWAYSCHOOSE = 'n'  # set to 'y' if you always want to choose Monty's choice when in AUTO mode. Set to 'r' if the choice is to be random
 AUTO = False # set to True for the computer to decide
@@ -95,11 +95,12 @@ def run_mh_simulator():
 ############################
 if __name__ == "__main__":
     # Set some variables.
-    VERBOSE = False
+    VERBOSE = True
     AUTO = True
-    AUTOLIMIT = 10
+    AUTOLIMIT = 5
     ALWAYSCHOOSE = 'r'
     MONTY = True
-
+    if VERBOSE:
+        print(f"AUTO: {AUTO}, AUTOLIMIT: {AUTOLIMIT}, ALWAYSCHOOSE: {ALWAYSCHOOSE}, MONTY: {MONTY}")
     # Run the main program
     run_mh_simulator()
