@@ -95,10 +95,10 @@ def run_mh_simulator():
 ############################
 if __name__ == "__main__":
     # Set some variables.
-    VERBOSE = True
+    VERBOSE = False
     AUTO = True
-    AUTOLIMIT = 5
-    ALWAYSCHOOSE = 'r'
+    AUTOLIMIT = 1000000
+    ALWAYSCHOOSE = 'n'
     MONTY = True
     if VERBOSE:
         print(f"AUTO: {AUTO}, AUTOLIMIT: {AUTOLIMIT}, ALWAYSCHOOSE: {ALWAYSCHOOSE}, MONTY: {MONTY}")
