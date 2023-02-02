@@ -29,12 +29,12 @@ Here are some typical results running this program one million times for each of
 
 ALWAYSCHOOSE = 'y'
 
-_You guessed correctly 666829 out of 1000000 times._
+`You guessed correctly 666829 out of 1000000 times.`
 
 ALWAYSCHOOSE = 'n'
 
-_You guessed correctly 332883 out of 1000000 times._
+`You guessed correctly 332883 out of 1000000 times.`
 
 ALWAYSCHOOSE = 'r'
 
-_You guessed correctly 499910 out of 1000000 times._
+`You guessed correctly 499910 out of 1000000 times.`
