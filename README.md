@@ -42,4 +42,4 @@ Here are some typical results running this program one million times for each of
 
 `You guessed correctly 499,910 out of 1,000,000 times.`
 
-So it would appear the strategy to win the car is always to change your guess when asked to do so. If you do the chance of winning is 2/3 as opposed to 1/3 if you don't. If you randomly change sometimes and not others odds are 1/2.
+So it would appear the strategy to win the car is always to change your guess when asked to do so. If you do the chance of winning is 2/3 as opposed to 1/3 if you don't. If you randomly change sometimes and not others odds are 1/2. Don't believe this, see this video: https://www.youtube.com/watch?v=UgKrQ2ywVfs 
