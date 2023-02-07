@@ -10,32 +10,35 @@ This program allows you to investigate the Monty Hall program in the following w
 - You can play against the program, it randomly places a car and two goats behind doors and you select which one you think is the car. You can choose whether Monty gives you the choice of picking another door or not. The program keeps track of your selections and gives you a score at the end.
 - You can also choose to run the program in auto mode for up to a maximum number of runs. Again, you can choose whether Monty allows the choice of picking another door or not. You can also auto select whether you choose to, you can always choose, never choose or choose at random.
 
-How you play is set via adjusting these constants for a given set of runs. Defaults are in brackets.
-- MONTY (False). Set to True for Monty to tell you one of the False options and give you the option to change.
-- ALWAYSCHOOSE ('n'). Set to 'y' if you always want to choose Monty's choice when in AUTO mode. Set to 'r' if the choice is to be random.
-- AUTO (False). Set to True for the computer to decide.
-- AUTOLIMIT (10). Max number of guesses if in auto mode.
-- VERBOSE (False). If True print additional info on how the programme is running.
-
-These can be set by adjusting in the program before a run.
+How you play is set by adjusting program variables set on the command line or via a YAML file called config.yaml.
+- "monty" set to True for Monty to tell you one of the false options and give you option to change
+- "choose" set to 'y' if you always want to choose Monty's choice when in auto mode. Set to 'r' if the choice is to be random
+- "auto" set to True for the computer to decide
+- "limit" the max number of guesses if in auto mode
+- "verbose" if True print additional info on how the programme is running
 
 To run the program type:
 
 `python3 montyhall.py`
 
-at a Python prompt.
+at a Python prompt. Change program variables via one of:
+-m set to True for Monty to give you a second guess, False otherwise
+-c set to 'y' if you want a second guess in auto mode, 'r' to randomly guess or 'n' for no second guess
+-a set to True for auto mode, False otherwise
+-l number defining the number of goes you can have
+-v set to True for verbose mode, False otherwise
 
-Here are some typical results running this program one million times for each of the ALWAYSCHOOSE options 'y', 'n' and 'r'.
+Here are some typical results running this program one million times for each of the _choose_ options 'y', 'n' and 'r'.
 
-ALWAYSCHOOSE = 'y'
+"choose" = 'y'
 
 `You guessed correctly 666,829 out of 1,000,000 times.`
 
-ALWAYSCHOOSE = 'n'
+"choose" = 'n'
 
 `You guessed correctly 332,883 out of 1,000,000 times.`
 
-ALWAYSCHOOSE = 'r'
+"choose" = 'r'
 
 `You guessed correctly 499,910 out of 1,000,000 times.`
 

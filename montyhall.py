@@ -1,5 +1,8 @@
 # Python program for investigating the Monty Hall problem, see description here https://en.wikipedia.org/wiki/Monty_Hall_problem
 import random
+import sys
+import config
+from readargs import read_args
 
 # Control variables
 MONTY = False # set to True for Monty to tell you one of the False options and give you option to change
@@ -25,13 +28,13 @@ def run_mh_simulator():
                 goat_doors[i] = door
                 i += 1
             door += 1
-        if VERBOSE:
+        if config.configdict["verbose"]:
             print(f"Car door is: {car_door}.")
             print(f"Goat doors are: {goat_doors}.")
         # Get the guessers choice or auto choose
-        if AUTO:
+        if config.configdict["auto"]:
             count += 1
-            if count > AUTOLIMIT:
+            if count > config.configdict["limit"]:
                 choice = 0
             else:
                 choice = random.randint(1,3)
@@ -44,17 +47,17 @@ def run_mh_simulator():
         else:
             # check choice is in range 1 - 3
             if (choice >= 1 and choice <= 3):
-                if MONTY:
+                if config.configdict["monty"]:
                     # let Monty select one of the goat doors, first set auto choose option
-                    if AUTO:
-                        if ALWAYSCHOOSE == 'r':
+                    if config.configdict["auto"]:
+                        if config.configdict["choose"] == 'r':
                             # make choice randomly
                             if random.randint(0,1) == 0:
                                 ans = 'n'
                             else:
                                 ans = 'y'
                         else:
-                            ans = ALWAYSCHOOSE
+                            ans = config.configdict["choose"]
                     # did they already choose the car?
                     if choice == car_door:
                         # randomly choose one of the goat doors
@@ -63,7 +66,7 @@ def run_mh_simulator():
                             other_door_index = 1
                         else:
                             other_door_index = 0
-                        if not AUTO:
+                        if not config.configdict["auto"]:
                             ans = input(f"Door {goat_doors[goat_door_index]} has a goat behind it, do you want to choose door {goat_doors[other_door_index]} instead? (y/n)")
                         if ans == 'y':
                             choice = goat_doors[other_door_index]
@@ -73,17 +76,17 @@ def run_mh_simulator():
                             goat_door_index = 1
                         else:
                             goat_door_index = 0
-                        if not AUTO:
+                        if not config.configdict["auto"]:
                             ans = input(f"Door {goat_doors[goat_door_index]} has a goat behind it, do you want to choose door {car_door} instead? (y/n)")
                         if ans == 'y':
                             choice = car_door
                 # check if they chose well, only print results if not in AUTO mode
                 if choice == car_door:
-                    if not AUTO:
+                    if not config.configdict["auto"]:
                         print("Congratulations, you got the car.")
                     results[0] = results[0] + 1
                 else:
-                    if not AUTO:
+                    if not config.configdict["auto"]:
                         print("Bad luck, you got a goat.")
                     results[1] = results[1] + 1
             else:
@@ -94,13 +97,9 @@ def run_mh_simulator():
 # Main program starts here #
 ############################
 if __name__ == "__main__":
-    # Set some variables.
-    VERBOSE = False
-    AUTO = True
-    AUTOLIMIT = 100000
-    ALWAYSCHOOSE = 'n'
-    MONTY = True
-    if VERBOSE:
-        print(f"AUTO: {AUTO}, AUTOLIMIT: {AUTOLIMIT}, ALWAYSCHOOSE: {ALWAYSCHOOSE}, MONTY: {MONTY}")
-    # Run the main program
+    # read the command line arguments
+    read_args(sys.argv)
+    if config.configdict["verbose"]:
+        print(config.configdict)
+    # run the main program
     run_mh_simulator()
