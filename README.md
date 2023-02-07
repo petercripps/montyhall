@@ -22,11 +22,11 @@ To run the program type:
 `python3 montyhall.py`
 
 at a Python prompt. Change program variables via one of:
--m set to True for Monty to give you a second guess, False otherwise
--c set to 'y' if you want a second guess in auto mode, 'r' to randomly guess or 'n' for no second guess
--a set to True for auto mode, False otherwise
--l number defining the number of goes you can have
--v set to True for verbose mode, False otherwise
+- -m set to True for Monty to give you a second guess, False otherwise
+- -c set to 'y' if you want a second guess in auto mode, 'r' to randomly guess or 'n' for no second guess
+- -a set to True for auto mode, False otherwise
+- -l number defining the number of goes you can have
+- -v set to True for verbose mode, False otherwise
 
 Here are some typical results running this program one million times for each of the _choose_ options 'y', 'n' and 'r'.
 
