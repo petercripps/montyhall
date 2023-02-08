@@ -4,12 +4,12 @@ import sys
 import config
 from readargs import read_args
 
-# Control variables
-MONTY = False # set to True for Monty to tell you one of the False options and give you option to change
-ALWAYSCHOOSE = 'n'  # set to 'y' if you always want to choose Monty's choice when in AUTO mode. Set to 'r' if the choice is to be random
-AUTO = False # set to True for the computer to decide
-AUTOLIMIT = 10 # max number of guesses if in auto mode
-VERBOSE = False # if True print additional info on how the programme is running
+# Control variables are in the config.yaml or can be passed via command line arguments
+# "monty" set to True for Monty to tell you one of the false options and give you option to change
+# "choose" set to 'y' if you always want to choose Monty's choice when in auto mode. Set to 'r' if the choice is to be random
+# "auto" set to True for the computer to decide
+# "limit" the max number of guesses if in auto mode
+# "verbose" if True print additional info on how the programme is running
 
 def run_mh_simulator():
     results = [0,0] # count of guesses, [0] for correct guesses [1] for incorrect
@@ -21,8 +21,8 @@ def run_mh_simulator():
         car_door = random.randint(1,3)
         # set goat door numbers i.e. numbers which are not the car door number
         goat_doors = [0,0]
-        door = 1
-        i = 0
+        door = 1 # the actual door number
+        i = 0 # index into the goat door list
         while door <= 3:
             if car_door != door:
                 goat_doors[i] = door

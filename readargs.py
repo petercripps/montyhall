@@ -19,9 +19,9 @@ def read_args(args):
         print("No arguments provided so using YAML file")
         return
     
-    # Start looking at parameters from first argument
+    # start looking at parameters from first argument
     i = 1
-    # Read arguments
+    # read arguments
     try:
         while i < len(args):
             match args[i]:     
@@ -45,7 +45,7 @@ def read_args(args):
                     if val == 'y' or val == 'n' or val == 'r':
                         config.configdict["choose"] = val
                     else:
-                        print(f"ERROR Unknown argument {args[i+1]}")
+                        print(f"ERROR Unknown parameter {args[i+1]} to argument {args[i]}")
                     i += 1    
                 case _:
                     print(f"ERROR Unknown argument {args[i]}")
@@ -57,7 +57,7 @@ def read_args(args):
 # Test program starts here
 ##########################
 if __name__ == "__main__":
-    # Execute only if run as a script
+    # execute only if run as a script
     print("Testing...")
     if True:
         read_args(sys.argv)
