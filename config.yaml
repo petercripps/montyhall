@@ -3,3 +3,4 @@ limit: 100
 verbose: False
 choose: 'y'
 auto: False
+timer: False

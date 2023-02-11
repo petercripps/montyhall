@@ -1,6 +1,7 @@
 # Python program for investigating the Monty Hall problem, see description here https://en.wikipedia.org/wiki/Monty_Hall_problem
 import random
 import sys
+from timeit import default_timer as timer
 import config
 from readargs import read_args
 
@@ -14,7 +15,8 @@ from readargs import read_args
 def run_mh_simulator():
     results = [0,0] # count of guesses, [0] for correct guesses [1] for incorrect
     playing = True # keep prompting for user inputs while this is True
-    count = 0 # count of guesses when in auto mode will stop when AUTOLIMIT reached
+    count = 0 # count of guesses when in auto mode will stop when limit reached
+    start_time = timer() # timer for auto mode
     
     while (playing):
         # randomly set the car door number (1 - 3)
@@ -92,6 +94,8 @@ def run_mh_simulator():
             else:
                 print(f"Invalid choice: {choice}.")
     print(f"You guessed correctly {results[0]:,d} out of {results[0]+results[1]:,d} times.")
+    if config.configdict["auto"] and config.configdict["timer"]:
+        print(f"Elapsed time {timer()-start_time} seconds.")
 
 ############################
 # Main program starts here #

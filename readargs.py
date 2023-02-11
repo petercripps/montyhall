@@ -36,6 +36,10 @@ def read_args(args):
                 case '-l':
                     config.configdict["limit"] = int(args[i + 1])
                     i += 1
+                case '-t':
+                    val = args[i + 1].capitalize()
+                    config.configdict["timer"] = (val == "True")
+                    i += 1
                 case '-v':
                     val = args[i + 1].capitalize()
                     config.configdict["verbose"] = (val == "True")

@@ -11,22 +11,24 @@ This program allows you to investigate the Monty Hall program in the following w
 - You can also choose to run the program in auto mode for up to a maximum number of runs. Again, you can choose whether Monty allows the choice of picking another door or not. You can also auto select whether you choose to switch: you can always choose, never choose or choose at random.
 
 How you play is decided by adjusting program variables set on the command line or via a YAML file called `config.yaml`.
-- "monty" set to True for Monty to tell you one of the false options and give you option to change
-- "choose" set to 'y' if you always want to choose Monty's choice when in auto mode. Set to 'r' if the choice is to be random
-- "auto" set to True for the computer to decide
-- "limit" the max number of guesses if in auto mode
-- "verbose" if True print additional info on how the programme is running
+- "monty" set to `True` for Monty to tell you one of the false options and give you option to change.
+- "choose" set to `y` if you always want to choose Monty's choice when in auto mode. Set to `n` if you never want to select Monty's choice. Set to `r` if the choice is to be random.
+- "auto" set to `True` for the computer to decide.
+- "limit" the max number of guesses if in auto mode.
+- "verbose" if `True` print additional info on how the programme is running.
+- "timer" if `True` display the time if in `auto` mode for how long it takes to make number of guesses defined by `limit`.
 
 To run the program type:
 
 `python3 montyhall.py`
 
 at a Python prompt. Change program variables via one of:
-- -m set to True for Monty to give you a second guess, False otherwise
-- -c set to 'y' if you want a second guess in auto mode, 'r' to randomly guess or 'n' for no second guess
-- -a set to True for auto mode, False otherwise
-- -l number defining the number of goes you can have
-- -v set to True for verbose mode, False otherwise
+- -m set to `True` for Monty to give you a second guess, `False` otherwise.
+- -c set to `y` if you want a second guess in auto mode, `r` to randomly guess or `n` for no second guess.
+- -a set to `True` for auto mode, `False` otherwise.
+- -l number defining the number of goes you can have.
+- -v set to `True` for verbose mode, `False` otherwise.
+- -t set to `True` to time number of runs, `False` otherwise.
 
 Here are some typical results running this program one million times for each of the _choose_ options 'y', 'n' and 'r'.
 
