@@ -1,6 +1,7 @@
 monty: True
-limit: 100
+limit: 1000
 verbose: False
 choose: 'y'
 auto: False
 timer: False
+doors: 3

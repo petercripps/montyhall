@@ -7,8 +7,9 @@ _Suppose you're on a game show, and you're given the choice of three doors: Behi
 
 This program allows you to investigate the Monty Hall program in the following ways.
 
-- You can play against the program, it randomly places a car and two goats behind doors and you select which one you think is the car. You can choose whether Monty gives you the choice of picking another door or not. The program keeps track of your selections and gives you a score at the end.
+- You can play against the program, it randomly places a car behind one door and goats behind the rest. You select which one you think is the car. You can choose whether Monty gives you the choice of picking another door or not. The program keeps track of your selections and gives you a score at the end.
 - You can also choose to run the program in auto mode for up to a maximum number of runs. Again, you can choose whether Monty allows the choice of picking another door or not. You can also auto select whether you choose to switch: you can always choose, never choose or choose at random.
+- The original Mony Hall problem used just 3 doors but you can set this number to between 3 and 100 in the YAML file.
 
 How you play is decided by adjusting program variables set on the command line or via a YAML file called `config.yaml`.
 - "monty" set to `True` for Monty to tell you one of the false options and give you option to change.
@@ -17,6 +18,7 @@ How you play is decided by adjusting program variables set on the command line o
 - "limit" the max number of guesses if in auto mode.
 - "verbose" if `True` print additional info on how the programme is running.
 - "timer" if `True` display the time if in `auto` mode for how long it takes to make number of guesses defined by `limit`.
+- "doors" the number of doors to play with between 3 and 100 are allowed (this cannot be set on the command line)
 
 To run the program type:
 
